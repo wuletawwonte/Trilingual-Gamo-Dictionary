@@ -5,17 +5,22 @@
 }
 
 
-<div class="d-flex align-items-center p-3 my-3 text-dark-50 bg-white rounded shadow-sm form-group">
-    <div class="input-group col-md-8">
-        <input class="form-control py-2 border-right-0 border" type="search" placeholder="search" id="example-search-input">
-        <span class="input-group-append">
-            <button class="btn btn-outline-secondary border-left-0 border" type="button">
-                <i class="bi bi-search"></i>
-            </button>
-        </span>
+<div class="p-3 bg-white rounded shadow-sm">
+
+    <div class="row">
+        <div class="input-group col-md-8">
+            <input class="form-control py-2 border-right-0 border" type="search" placeholder="search" id="example-search-input">
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+            </span>
+        </div>
+        <div class="col-md-4 text-md-right">
+            <a class="btn btn-primary" asp-controller="word" asp-action="create">Add Word</a>
+        </div>
     </div>
-</div>
-<div class="d-flex align-items-center p-3 my-3 bg-white rounded shadow-sm">
+    <hr />
 
     <table class="table table-bordered">
         <thead>
