@@ -1,11 +1,13 @@
-﻿@{
+﻿@model List<TrilingualGamoDictionary.Models.Word> 
+
+@{
     ViewData["Title"] = "Home";
 }
 
 
 <div class="d-flex align-items-center p-3 my-3 text-dark-50 bg-white rounded shadow-sm form-group">
     <div class="input-group col-md-8">
-        <input class="form-control py-2 border-right-0 border" type="search" value="search" id="example-search-input">
+        <input class="form-control py-2 border-right-0 border" type="search" placeholder="search" id="example-search-input">
         <span class="input-group-append">
             <button class="btn btn-outline-secondary border-left-0 border" type="button">
                 <i class="bi bi-search"></i>
@@ -21,28 +23,17 @@
                 <th scope="col">#</th>
                 <th scope="col">Word</th>
                 <th scope="col">Meaning</th>
-                <th scope="col">Handle</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Contribute</td>
-                <td>To give (money, time, knowledge, assistance, etc.) to a common supply, fund, etc., as for charitable purposes.</td>
-                <td>&#64mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>knowledge</td>
-                <td>Acquaintance with facts, truths, or principles, as from study or investigation; general erudition:</td>
-                <td>&#64fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>acquaintance</td>
-                <td>A person known to one, but usually not a close friend.</td>
-                <td>&#64twitter</td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.WordTitle</td>
+                    <td>@item.Meaning</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
